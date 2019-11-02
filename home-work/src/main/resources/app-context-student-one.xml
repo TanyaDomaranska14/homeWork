@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="student1" class="com.example.Student"
+          p:name = "Ivan"
+          p:age = "18">
+        <!--<constructor-arg index="0" value="Ivan"/>-->
+        <!--<constructor-arg index="1" value="18"/>-->
+    </bean>
+    <bean id="maths" class="com.example.Maths"/>
+    <bean id="physics" class="com.example.Physics"/>
+    <bean id="mathsTeacer" class="com.example.MathsTeacher"/>
+
+    <bean id="student" class="com.example.Student">
+          <property name="marksMap">
+              <map>
+                  <entry key="Ivan " value=" I am a student"/>
+                  <entry key="I am study subject " value-ref="maths"/>
+                  <entry key="And name of my teacher  " value-ref="mathsTeacer"/>
+              </map>
+          </property>
+
+</bean>
+</beans>
